@@ -1,0 +1,3 @@
+[submodule "ansidot"]
+	path = ansidot
+	url = git@github.com:thothh/ansidot.git
