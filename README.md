@@ -7,7 +7,7 @@ My dotfiles collection for a flawless workflow. Starring `zsh`, `vim` and `tmux`
 ## How to setup
 
 ```shell
-git clone --recurse-submodules git@github.com:maxbrunet/dotfiles.git ~/.dotfiles
+git clone --recurse-submodules git@github.com:thothh/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 mkvirtualenv .dotfiles
 pip install ansible
