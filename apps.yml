@@ -28,7 +28,7 @@ apps:
         dest: ~/.local/share/kubectx
         version: v0.7.1
       - repo: https://github.com/romkatv/powerlevel10k.git
-        dest: ~/.powerlevel10k
+        dest: "{{ omz_custom_plugins }}/powerlevel10k"
     dotfiles:
       - path: ~/.zshrc
         src: "{{ source_dir }}/.zshrc"
