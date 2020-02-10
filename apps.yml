@@ -10,13 +10,10 @@ apps:
         dest: ~/.oh-my-zsh
       - repo: https://github.com/zsh-users/zsh-autosuggestions.git
         dest: "{{ omz_custom_plugins }}/zsh-autosuggestions"
-        version: v0.5.0
+        version: v0.6.4
       - repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
         dest: "{{ omz_custom_plugins }}/zsh-syntax-highlighting"
         version: 0.6.0
-      - repo: https://github.com/junegunn/fzf.git
-        dest: ~/.fzf
-        version: 0.18.0
       - repo: https://github.com/nicodebo/base16-fzf.git
         dest: ~/.local/share/fzf/base16-fzf
       - repo: https://github.com/pyenv/pyenv-virtualenv.git
@@ -54,15 +51,17 @@ apps:
         src: ~/.local/share/kubectx/completion/kubectx.zsh
       - path: '{{ omz_custom_plugins }}/kubectx/_kubens'
         src: ~/.local/share/kubectx/completion/kubens.zsh
+      - path: ~/.local/bin/aws-vault-yk
+        src: "{{ source_dir }}/.local/bin/aws-vault-yk"
   - name: vim
     git:
       - repo: https://github.com/amix/vimrc.git
         dest: ~/.vim_runtime
+      - repo: https://github.com/Valloric/YouCompleteMe.git
+        dest: "{{ vim_plugins }}/YouCompleteMe"
       - repo: https://github.com/morhetz/gruvbox.git
         dest: "{{ vim_plugins }}/gruvbox"
         version: v2.0.0
-      - repo: https://github.com/Valloric/YouCompleteMe.git
-        dest: "{{ vim_plugins }}/YouCompleteMe"
       - repo: https://github.com/editorconfig/editorconfig-vim.git
         dest: "{{ vim_plugins }}/editorconfig-vim"
         version: v0.3.3
