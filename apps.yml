@@ -29,6 +29,8 @@ apps:
     dotfiles:
       - path: ~/.zshrc
         src: "{{ source_dir }}/.zshrc"
+      - path: ~/.p10k.zsh
+        src: "{{ source_dir }}/.p10k.zsh"
       - path: '{{ omz_custom_plugins }}/ansidot/ansidot.plugin.zsh'
         src: '{{ omz_custom_plugins_src }}/ansidot/ansidot.plugin.zsh'
       - path: '{{ omz_custom_plugins }}/fzf-base16/fzf-base16.plugin.zsh'
