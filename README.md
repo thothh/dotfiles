@@ -16,6 +16,11 @@ COLOANE% export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
 COLOANE% source /usr/local/bin/virtualenvwrapper.sh
 
 
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+
+
 ```shell
 git clone --recurse-submodules git@github.com:thothh/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
