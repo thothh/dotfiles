@@ -5,6 +5,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Get OS/env
+if [[ "$(uname -s)" == 'Darwin' ]]; then
+  export RUNOS='Darwin'
+elif [[ "$(uname -s)" == 'Linux' ]]; then
+  export RUNOS='Linux'
+else
+  export RUNOS='Unknown'
+fi
+
 # Customize PATH
 export PATH="${HOME}/.local/bin:${PATH}"
 
