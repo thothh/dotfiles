@@ -9,7 +9,13 @@ fi
 if [[ "$(uname -s)" == 'Darwin' ]]; then
   export RUNOS='Darwin'
 elif [[ "$(uname -s)" == 'Linux' ]]; then
-  export RUNOS='Linux'
+  if [[ "$(uname -r|awk -F '-' '{print $2}')" == 'microsoft' ]]; then
+    export RUNOS='Linux-WSL'
+  else
+    export RUNOS='Linux'
+  fi
+elif [[ "$(uname -s)" == 'FreeBSD' ]]; then
+  export RUNOS='FreeBSD'
 else
   export RUNOS='Unknown'
 fi
