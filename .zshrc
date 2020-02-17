@@ -8,6 +8,8 @@ fi
 # Get OS/env
 if [[ "$(uname -s)" == 'Darwin' ]]; then
   export RUNOS='Darwin'
+    export PYTHON=/usr/local/bin/python
+    export PATH=$PYTHON:$PATH
 elif [[ "$(uname -s)" == 'Linux' ]]; then
   if [[ "$(uname -r|awk -F '-' '{print $2}')" == 'microsoft' ]]; then
     export RUNOS='Linux-WSL'
