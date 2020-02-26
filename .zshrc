@@ -8,15 +8,21 @@ fi
 # Get OS/env
 if [[ "$(uname -s)" == 'Darwin' ]]; then
   export RUNOS='Darwin'
-    export PYTHON=/usr/local/bin/python
+    export PYTHON=/usr/bin/python3
     export PATH=$PYTHON:$PATH
     export VIRTUALENVWRAPPER_PYTHON=$PYTHON
-    #source /usr/local/bin/virtualenvwrapper.sh
+    source /usr/local/bin/virtualenvwrapper.sh
+    if [ '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' ]; then
+      alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+    fi
 elif [[ "$(uname -s)" == 'Linux' ]]; then
   if [[ "$(uname -r|awk -F '-' '{print $2}')" == 'microsoft' ]]; then
     export RUNOS='Linux-WSL'
     # Set the basic windows env
-    export PATH=$PATH:'/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Program Files/TortoiseSVN/bin:/mnt/c/Program Files/Google/Google Apps Sync/:/mnt/c/Program Files/Google/Google Apps Migration/:/mnt/c/Users/ch/AppData/Local/Microsoft/WindowsApps:/home/ch/.fzf/bin'
+    export PATH=$PATH:'/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH:/mnt/c/Program Files/TortoiseSVN/bin:/mnt/c/Program Files/Google/Google Apps Sync/:/mnt/c/Program Files/Google/Google Apps Migration/:/mnt/c/Users/ch/AppData/Local/Microsoft/WindowsApps:/home/ch/.fzf/bin'
+    if [ "/mnt/c/Program Files/Microsoft VS Code/bin/code" ]; then
+      alias code="/mnt/c/Program\ Files/Microsoft\ VS\ Code/bin/code"
+    fi
   else
     export RUNOS='Linux'
   fi
@@ -25,6 +31,7 @@ elif [[ "$(uname -s)" == 'FreeBSD' ]]; then
 else
   export RUNOS='Unknown'
 fi
+
 
 # Customize PATH
 export PATH="${HOME}/.local/bin:${PATH}"
