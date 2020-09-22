@@ -23,6 +23,10 @@ elif [[ "$(uname -s)" == 'Linux' ]]; then
     if [ "/mnt/c/Program Files/Microsoft VS Code/bin/code" ]; then
       alias code="/mnt/c/Program\ Files/Microsoft\ VS\ Code/bin/code"
     fi
+    # Brew
+    if [ "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
+      export PATH="/home/linuxbrew/.linuxbrew/bin":$PATH
+    fi
   else
     export RUNOS='Linux'
   fi
