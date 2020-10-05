@@ -12,12 +12,13 @@ Install as root:
 3. pip3 install virtualenv virtualenvwrapper ansible
 
 Ubuntu notes:
-COLOANE% export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
+```shell
+COLOANE% export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 COLOANE% source /usr/local/bin/virtualenvwrapper.sh
-
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
+```
 
 
 
