@@ -26,6 +26,5 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 git clone --recurse-submodules git@github.com:thothh/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 mkvirtualenv .dotfiles
-pip install ansible
 ansible-playbook ansidot/ansidot.yml --inventory localhost, --connection local --extra-vars @apps.yml
 ```
