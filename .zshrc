@@ -15,6 +15,17 @@ if [[ "$(uname -s)" == 'Darwin' ]]; then
     if [ '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' ]; then
       alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
     fi
+    # zsh-users
+    # Load zsh-syntax-highlighting after all custom widgets have been created
+    if (( $+commands[brew] )); then
+      source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+      source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    fi
+    #fsf
+    if (( $+commands[brew] )); then
+      [[ $- == *i* ]] && source /usr/local/opt/fzf/shell/completion.zsh 2> /dev/null
+      source /usr/local/opt/fzf/shell/key-bindings.zsh
+    fi
 elif [[ "$(uname -s)" == 'Linux' ]]; then
   if [[ "$(uname -r|awk -F '-' '{print $2}')" == 'microsoft' ]]; then
     export RUNOS='Linux-WSL'
@@ -27,6 +38,11 @@ elif [[ "$(uname -s)" == 'Linux' ]]; then
     if [ "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
       export PATH="/home/linuxbrew/.linuxbrew/bin":$PATH
     fi
+    # zsh-users
+    # Load zsh-syntax-highlighting after all custom widgets have been created
+    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source $HOME/.fzf/shell/key-bindings.zsh
   else
     export RUNOS='Linux'
   fi
@@ -102,10 +118,10 @@ source "${ZSH}/oh-my-zsh.sh"
 
 # fzf
 if (( $+commands[zypper] )); then
-  source /etc/zsh_completion.d/fzf-key-bindings
+  #source /etc/zsh_completion.d/fzf-key-bindings
 elif (( $+commands[brew] )); then
-  [[ $- == *i* ]] && source /usr/local/opt/fzf/shell/completion.zsh 2> /dev/null
-  source /usr/local/opt/fzf/shell/key-bindings.zsh
+  #[[ $- == *i* ]] && source /usr/local/opt/fzf/shell/completion.zsh 2> /dev/null
+  #source /usr/local/opt/fzf/shell/key-bindings.zsh
 fi
 
 # kube-ps1 plugin
@@ -170,16 +186,6 @@ open_gh() {
   hub browse ${2:-} -- "tree/$({git rev-parse --abbrev-ref --symbolic @{u} || git rev-parse --short HEAD} 2>/dev/null | sed 's#^[^/]*/##')/$(git rev-parse --show-prefix)${1:-}"
   return "${?}"
 }
-
-# zsh-users
-# Load zsh-syntax-highlighting after all custom widgets have been created
-if (( $+commands[brew] )); then
-  source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-else
-  source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-  source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
