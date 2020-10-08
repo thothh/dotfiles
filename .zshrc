@@ -27,7 +27,7 @@ if [[ "$(uname -s)" == 'Darwin' ]]; then
       source /usr/local/opt/fzf/shell/key-bindings.zsh
     fi
 elif [[ "$(uname -s)" == 'Linux' ]]; then
-  if [[ "$(uname -r|awk -F '-' '{print $2}')" == 'microsoft' ]]; then
+  if [ -n $WSL_DISTRO_NAME ]; then
     export RUNOS='Linux-WSL'
     # Set the basic windows env
     export PATH=$PATH:'/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH:/mnt/c/Program Files/TortoiseSVN/bin:/mnt/c/Program Files/Google/Google Apps Sync/:/mnt/c/Program Files/Google/Google Apps Migration/:/mnt/c/Users/ch/AppData/Local/Microsoft/WindowsApps:/home/ch/.fzf/bin'
