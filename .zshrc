@@ -15,6 +15,9 @@ if [[ "$(uname -s)" == 'Darwin' ]]; then
     if [ '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' ]; then
       alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
     fi
+    if [ '~/.krew/bin' ]; then
+      export PATH=$PATH:'~/.krew/bin'
+    fi
     # zsh-users
     # Load zsh-syntax-highlighting after all custom widgets have been created
     if (( $+commands[brew] )); then
