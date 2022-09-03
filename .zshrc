@@ -11,7 +11,7 @@ if [[ "$(uname -s)" == 'Darwin' ]]; then
     export PYTHON=/usr/bin/python3
     export PATH=$PYTHON:$PATH
     export VIRTUALENVWRAPPER_PYTHON=$PYTHON
-    source /usr/local/bin/virtualenvwrapper.sh
+    source ~/.local/bin/virtualenvwrapper.sh
     if [ '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' ]; then
       alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
     fi
@@ -32,6 +32,10 @@ if [[ "$(uname -s)" == 'Darwin' ]]; then
 elif [[ "$(uname -s)" == 'Linux' ]]; then
   if [ -n $WSL_DISTRO_NAME ]; then
     export RUNOS='Linux-WSL'
+     export PYTHON=/usr/bin/python3
+     export PATH=$PYTHON:$PATH
+     export VIRTUALENVWRAPPER_PYTHON=$PYTHON
+    source ~/.local/bin/virtualenvwrapper.sh
     # Set the basic windows env
     export PATH=$PATH:'/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH:/mnt/c/Program Files/TortoiseSVN/bin:/mnt/c/Program Files/Google/Google Apps Sync/:/mnt/c/Program Files/Google/Google Apps Migration/:/mnt/c/Users/ch/AppData/Local/Microsoft/WindowsApps:/home/ch/.fzf/bin'
     if [ "/mnt/c/Program Files/Microsoft VS Code/bin/code" ]; then
@@ -104,7 +108,7 @@ plugins=(
   pyenv
   sudo
   vagrant
-  zsh_reload
+  #zsh_reload
   # custom
   ansidot
   fzf-base16

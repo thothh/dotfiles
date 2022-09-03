@@ -20,8 +20,8 @@ apps:
       - repo: https://github.com/pyenv/pyenv-virtualenv.git
         dest: ~/.pyenv/plugins/pyenv-virtualenv
         version: v1.1.5
-      - repo: https://github.com/chriskempson/base16-xresources.git
-        dest: ~/.Xresources.d/base16-xresources
+        #      - repo: https://github.com/chriskempson/base16-xresources.git
+        #        dest: ~/.Xresources.d/base16-xresources
       - repo: https://github.com/ahmetb/kubectx.git
         dest: ~/.local/share/kubectx
         version: v0.7.1
@@ -96,8 +96,8 @@ apps:
         src: ~/.tmux/.tmux.conf
   - name: i3
     git:
-      - repo: https://github.com/chriskempson/base16-xresources.git
-        dest: ~/.Xresources.d/base16-xresources
+        #      - repo: https://github.com/chriskempson/base16-xresources.git
+        #        dest: ~/.Xresources.d/base16-xresources
       - repo: https://github.com/vivien/i3blocks-contrib.git
         dest: ~/.local/lib/i3blocks-contrib
     dotfiles:
