@@ -37,9 +37,9 @@ elif [[ "$(uname -s)" == 'Linux' ]]; then
      export VIRTUALENVWRAPPER_PYTHON=$PYTHON
     source ~/.local/bin/virtualenvwrapper.sh
     # Set the basic windows env
-    export PATH=$PATH:'/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH:/mnt/c/Program Files/TortoiseSVN/bin:/mnt/c/Program Files/Google/Google Apps Sync/:/mnt/c/Program Files/Google/Google Apps Migration/:/mnt/c/Users/ch/AppData/Local/Microsoft/WindowsApps:/home/ch/.fzf/bin'
-    if [ "/mnt/c/Program Files/Microsoft VS Code/bin/code" ]; then
-      alias code="/mnt/c/Program\ Files/Microsoft\ VS\ Code/bin/code"
+    export PATH=$PATH:'/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH:/mnt/c/Users/ch/AppData/Local/Microsoft/WindowsApps:/home/ch/.fzf/bin'
+    if [ "/mnt/c/Users/ch/AppData/Local/Programs/Microsoft VS Code/bin/code" ]; then
+      alias code="/mnt/c/Users/ch/AppData/Local/Programs/Microsoft VS Code/bin/code"
     fi
     # Brew
     if [ "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
