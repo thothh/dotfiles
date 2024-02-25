@@ -14,7 +14,7 @@ Install as root:
 
 Ubuntu notes:
 ```shell
-COLOANE% export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.9
+COLOANE% export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.10
 COLOANE% source /usr/local/bin/virtualenvwrapper.sh
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
